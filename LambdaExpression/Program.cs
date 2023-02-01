@@ -13,6 +13,7 @@ namespace LambdaExpression
             CheckingForTeenagerPersons(listPersonsInCity);
             Retrive_Average_Age(listPersonsInCity);
             CheckforNamePresentInlistorNot(listPersonsInCity, "Smith");
+            Retrive_Records_For_Age_GreaterThan_Sixty(listPersonsInCity);
         }
         private static void AddRecords(List<Person> listPersonInCity)
         {
@@ -61,5 +62,13 @@ namespace LambdaExpression
                 Console.WriteLine($"{name} is Not present in the List");
             }
         }
+        public static void Retrive_Records_For_Age_GreaterThan_Sixty(List<Person> listPersonInCity)
+        {
+            foreach (Person person in listPersonInCity.FindAll(e => e.Age > 60))
+            {
+                Console.WriteLine("Name : " + person.Name + " \t\tAge : " + person.Age);
+            }
+        }
+
     }
 }
